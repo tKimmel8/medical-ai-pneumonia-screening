@@ -79,6 +79,14 @@ This configuration prioritizes patient safety by minimizing missed pneumonia cas
 
 🎯 Calibration
 
+Evaluation Plots
+
+ROC Curve
+![ROC Curve](report/figures/roc_curve.png)
+
+Calibration Curve
+![Calibration Curve](report/figures/calibration_curve.png)
+
 Brier Score: 0.0919
 
 Predicted probabilities are reasonably well-calibrated, enabling risk-based triage rather than simple binary alerts.
