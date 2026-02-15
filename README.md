@@ -1,16 +1,52 @@
+# Pneumonia Screening Using AI
+
+## A Comprehensive Approach to Diagnosis and Treatment
+
+This project leverages advanced AI techniques to enhance the screening process for pneumonia, aiming to improve patient outcomes and streamline clinical workflows. The tool is designed for healthcare professionals seeking to integrate AI-driven solutions into their practice.
+
+## Calibration
+
+Evaluation Plots
+
+ROC Curve
+![ROC Curve](report/figures/roc_curve.png)
+
+Calibration Curve
+![Calibration Curve](report/figures/calibration_curve.png)
+
+---
 
 ## Confusion Matrix
 
-![Confusion Matrix](link_to_confusion_matrix_image)
+Model performance across classification outcomes:
 
-The Confusion Matrix shows the performance of the model. It provides insight into the true positive, true negative, false positive, and false negative rates, which are critical for assessing model efficacy.
+![Confusion Matrix](report/figures/confusion_matrix.png)
 
-![Precision-Recall Curve](link_to_precision_recall_curve_image)
+Interpretation:
 
-The Precision-Recall Curve illustrates the trade-off between precision and recall for different probability thresholds. A curve closer to the top right corner indicates better precision and recall.
+- True Negatives (TN): Correct NORMAL predictions  
+- True Positives (TP): Correct PNEUMONIA detections  
+- False Negatives (FN): Missed pneumonia cases (clinical risk)  
+- False Positives (FP): Overcalls requiring review  
 
-![ROC Curve](link_to_roc_curve_image)
+Sensitivity-first calibration reduces FN at the cost of moderate FP — appropriate for screening deployment.
 
-The Receiver Operating Characteristic (ROC) Curve demonstrates the model’s diagnostic ability as its discrimination threshold is varied. A curve closer to the top left corner indicates a better model.
+---
+
+## Interpretability — Grad-CAM Visual Explanations
+
+Grad-CAM highlights anatomical regions influencing model predictions, improving clinical transparency.
+
+### Normal Case
+
+![Grad-CAM Normal](report/figures/gradcam_normal.png)
+
+Model attention is diffuse without focal consolidation signals.
+
+---
+
+### Pneumonia Case
+
+![Grad-CAM Pneumonia](report/figures/gradcam_pneumonia.png)
 
 Activation localizes to parenchymal opacification regions consistent with pneumonia patterns.
